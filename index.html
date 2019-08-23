@@ -33,6 +33,154 @@
 	<p>
 		<strike>1,000,000</strike>
 	</p>
+	<br> <br/>
+	<!-- HTML lien ket -->
+	<a href="https://vnexpress.net" title="website vnexpress.net" target="_blank"> go to vnexpress.net</a>
+	<br><br>
+	<a href="demo.html" title="demo"> go to demo</a>
+	<br><br>
+	<!-- Neo link or Anchor link -->
+	<a href="#title" title="go to H1">Go to tag H1</a>
+	<br><br>
+	<a href="javascript:void(0);"> Khong di dau ca</a>
+	<br><br>
+	<!-- HTML danh sach -->
+	<!-- danh sach co thu tu -->
+	<ol>
+		<li>
+			<a href="#"> Home</a>
+		</li>
+		<li>
+			<a href="#"> About</a>
+		</li>
+		<li>
+			<a href="#"> Contact</a>
+		</li>
+	</ol>
+	<!-- danh sach khong co thu tu -->
+	<ul>
+		<li>
+			<a href="#"> Home</a>
+		</li>
+		<li>
+			<a href="#"> About</a>
+		</li>
+		<li>
+			<a href="#"> Contact</a>
+		</li>
+	</ul>
+	<br><br>
+	<!-- HTML lam viec bang bieu du lieu -->
+	<table width="100%" border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr bgcolor="green">
+				<th width="3%">MSV</th>
+				<th>Ho Ten</th>
+				<th>Que Quan</th>
+				<th>Gioi Tinh</th>
+				<th>Hoc Bong</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td align="center">113</td>
+				<td>Nguyen Van Teo</td>
+				<td rowspan="2">Ha Noi</td>
+				<td>Nam</td>
+				<td>15000000</td>
+			</tr>
+			<tr>
+				<td>114</td>
+				<td>Nguyen Thi No</td>
+				<!-- <td>Ha Noi</td> -->
+				<td>Nu</td>
+				<td>25000000</td>
+			</tr>
+			<tr>
+				<td>115</td>
+				<td>Nguyen Van Ti</td>
+				<td>Nam Dinh</td>
+				<td>Nam</td>
+				<td>16000000</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4">Tong Hoc bong</td>
+				<td>3124234353</td>
+			</tr>
+		</tfoot>
+	</table>
+	<br><br>
 
+	<!-- HTML media  -->
+	<!-- Source -->
+	<img src="images/icon.png" alt="demo image" width="200" height="200">
+	<br><br>
+	<audio src="audios/con-mua-ngang-qua.mp3" autobuffer autoloop loop controls></audio>
+	<br><br>
+	<video src="videos/con-mua-ngang-qua.mp4" autobuffer autoloop loop controls poster="images/icon.png"></video>
+	<br><br>
+	<!-- HTML do hoa -->
+	<canvas></canvas>
+	<!-- HTML plugin -->
+	<object data="https://vnexpress.net/" width="500" height="450"></object>
+	<br><br>
+	<!-- HTML youtube -->
+	<iframe src=""></iframe>
+	<br><br>
+	<embed src="images/test.swf"></embed>
+	<br><br>
+
+	<!-- HTML Form -->
+	<form action="server/login.php" method="POST" enctype="multipart/form-data">
+		<label for="user">Username</label>
+		<input type="text" id="user" name="username" class="form" required="required" minlength="3" maxlength="10">
+		<br><br>
+		<label for="pass">Password</label>
+		<input type="password" name="pass" id="pass" readonly="readonly" value="121234">
+		<br><br>
+		<label for="number">Number</label>
+		<input type="number" name="number" id="number" disabled="disabled" value="10">
+		<br><br>
+		<label for="email">Email</label>
+		<input type="email" name="email" id="email">
+		<br><br>
+		<label for="url">URL</label>
+		<input type="url" name="url" id="url">
+		<br><br>
+		<label for="color">Color</label>
+		<input type="color" name="color" id="color">
+		<br><br>
+		<label for="date">Date</label>
+		<input type="week" name="date" id="date">
+		<br><br>
+		<label for="Content">Content</label>
+		<textarea name="Content" id="Content" rows="5" cols="50"></textarea>
+		<br><br>
+		<label for="birthDay"> Ngay sinh</label>
+		<select id="birthDay" name="birthDay">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3" selected="selected">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+		</select>
+		<br><br>
+		<span> Nam</span>
+		<input type="radio" name="gender" checked="checked">
+		<span> Nu</span>
+		<input type="radio" name="gender">
+		<br><br>
+		<span> tuoi tu 18 - 25</span>
+		<input type="checkbox" name="age" checked="checked">
+		<span> tuoi tu 25 - 30</span>
+		<input type="checkbox" name="age2">
+		<br><br>
+		<button type="submit" name="btnSubmit"> Submit</button>
+		<br><br>
+		<button type="button" name="btn"> button </button>
+	</form>
 </body>
 </html>
