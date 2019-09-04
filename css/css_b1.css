@@ -46,6 +46,14 @@ input[class$='age'] {
 	border: 1px solid yellow;
 }
 
+input[class*='ge'] {
+	border: 1px solid orange;
+}
+
+input[class|='my'] {
+	border: 1px solid silver;
+}
+
 
 
 

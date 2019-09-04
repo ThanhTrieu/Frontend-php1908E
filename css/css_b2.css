@@ -1,0 +1,103 @@
+*{
+	margin: 0;
+	padding: 0;
+	/* border: 0; */
+}
+
+/* selector phan cap */
+div.box-1 + div.box-2 {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+div.box1 > h2 {
+	color: red;
+}
+div.box-1 h3{
+	color: blue;
+}
+
+section.b-1 > div.b-2 + div.b-3 ~ div.b-4 > div.b-5 div.b-6 > h1 {
+	color: red;
+}
+/* gom nhom selector */
+p.p1, p.p2 {
+	color: blue;
+}
+p.p1{
+	font-size: 50px;
+}
+p.p2{
+	font-size: 20px;
+}
+/* pesudo class selector */
+div.parent :first-child{
+	color: blue;
+}
+div.parent :first-of-type{
+	color: green;
+}
+
+div.parent :last-child{
+	color: red;
+}
+div.parent :last-of-type{
+	color: pink;
+}
+div.parent :nth-last-child(3) {
+	color: violet;
+}
+div.parent :nth-last-of-type(2) {
+	color: yellow;
+}
+
+div.parent :nth-child(3) {
+	color: orange;
+}
+div.parent :nth-of-type(2) {
+	color: silver;
+}
+div.only-child :only-child{
+	color: red;
+}
+input[class='focus']:focus {
+	width: 500px;
+	height: 30px;
+	border: 2px solid red;
+}
+input[class='agree']:checked {
+	width: 100px;
+	height: 100px;
+}
+
+
+a:active {
+	color: red;
+}
+a:visited {
+	color: yellow;
+}
+a:link{
+	color: violet;
+}
+a:hover{
+	color: white;  
+}
+
+p.text::first-letter{
+	color: red;
+	font-size: 50px;
+}
+p.text::first-line{
+	color: green;
+}
+p.text::before{
+	content: 'LPHP1908E';
+}
+    	content: 'LPHP1908E';
+}
+p.text::selection{
+	color: yellow;
+}
+
+
