@@ -94,8 +94,6 @@ p.text::first-line{
 p.text::before{
 	content: 'LPHP1908E';
 }
-    	content: 'LPHP1908E';
-}
 p.text::selection{
 	color: yellow;
 }
