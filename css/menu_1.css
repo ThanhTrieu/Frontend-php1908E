@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 14px;
+}
+nav{
+	width: 250px;
+	margin: auto;
+	background-color: #FFFFCC;
+}
+nav ul.menu li {
+	list-style: none;
+	padding: 12px 5px;
+	border-bottom: 1px solid red;
+	position: relative;
+}
+nav ul.menu li:last-child {
+	border: none;
+}
+nav ul.menu li:hover {
+	background-color: black;
+	cursor: pointer;
+}
+nav ul.menu li:hover > a {
+	color: white;
+}
+nav ul.menu li a {
+	text-decoration: none;
+}
+/* dropdown menu */
+nav ul.menu li ul.dropdown{
+	display: none;
+	position: absolute;
+	width: 250px;
+	background-color: #FFFFCC;
+	left: 250px;
+	top: 0px;
+}
+/* hien thi menu */
+nav ul.menu li:hover > ul.dropdown{
+	display: block;
+}
+
+
+
