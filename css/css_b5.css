@@ -1,0 +1,112 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+div.container{
+	width: 980px;
+	margin: auto;
+}
+div.box{
+	width: 200px;
+	height: 150px;
+	border: 1px solid red;
+	/* overflow: hidden; */
+	/* overflow: scroll; */
+	overflow-y: scroll;
+	float: left;
+	margin: 0px 10px;
+	background-color: pink;
+}
+/* responsive */
+@media only screen and (min-width: 641px){
+	/* override lai code css o ben ngoai */
+
+	div.container{
+		width: 736px;
+	}
+	div.box{
+		width: 100%;
+		height: 250px;
+		float: none;
+		margin: 10px 0px;
+		background-color: violet;
+	}
+}
+
+@media only screen and (max-width: 640px){
+	/* override lai code css o ben ngoai */
+
+	div.container{
+		width: 736px;
+	}
+	div.box{
+		width: 100%;
+		height: 250px;
+		float: none;
+		margin: 10px 0px;
+		background-color: yellow;
+	}
+}
+
+.clear{
+	clear: both;
+}
+div.content{
+	width: 300px;
+	height: 300px;
+	/* background: linear-gradient(to right bottom, red, yellow, green, violet, pink, blue); */
+	background: pink;
+	background: -webkit-linear-gradient(60deg, red, yellow, green, violet, pink, blue);
+	background: -moz-linear-gradient(60deg, red, yellow, green, violet, pink, blue);
+	background: -ms-linear-gradient(60deg, red, yellow, green, violet, pink, blue);
+	background: -o-linear-gradient(60deg, red, yellow, green, violet, pink, blue);
+	background: linear-gradient(60deg, red, yellow, green, violet, pink, blue);
+	
+	/* di chuyen phan tu */
+	/* transform: translate(100px, 100px); */
+	/* keo gian phan tu */
+	/* transform: scale(0.5, 0.5);
+	transform: skew(35deg, 60deg); */
+
+	/* quay phan tu */
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+	transform: rotate(60deg);
+	word-wrap: break-word;
+
+	-webkit-animation: LPHP1908E 10s ease 0s infinite alternate;
+	animation: LPHP1908E 10s ease 0s infinite alternate;
+	position: relative;
+}
+
+@keyframes LPHP1908E {
+	from{
+		left: 0px;
+	}
+	to{
+		left: 800px;
+	}
+}
+
+div.content p  {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+div.content:hover{
+	-webkit-transition: all 10s ease 0s;
+	transition: all 10s ease 0s;
+	transform: rotate(360deg);
+	background: linear-gradient(60deg,gray, brown, silver);
+	opacity: 0.2;
+}
+
+
+
+
+
+
+
