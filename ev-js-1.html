@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Event</title>
+</head>
+<body onerror="myError();">
+	<h1>Learning JS Event</h1>
+	<button onclick="helloword(); demo();">Click me</button>
+	<br>
+	<input type="text" onfocus="myFocus();" onblur="myBlur();">
+	<br><br>
+	<select onchange="selectGender(this);">
+		<option value="1">Nam</option>
+		<option value="0">Nu</option>
+	</select>
+	<br><br>
+	<input type="text" onchange="myChangeData(this);" value="">
+	<br><br>
+	<button ondblclick="myDblClick();">Click me 2</button>
+	<br><br>
+
+	<input type="text" onkeydown="myKeydown()" onkeypress="myKeypress()"  onkeyup="myKeyup()">
+
+	<br><br>
+	<button onmousedown="myMouseDown()" onmouseup="myMouseUp()">click me 3</button>
+
+	<script type="text/javascript" src="js/event-1.js"></script>
+</body>
+</html>
