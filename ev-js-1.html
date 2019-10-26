@@ -26,6 +26,18 @@
 	<br><br>
 	<button onmousedown="myMouseDown()" onmouseup="myMouseUp()">click me 3</button>
 
+
+	<br><br>
+	<img src="images/icon.png" onmouseover="myMouseOver(this);" onmouseout="myMouseOut(this);">
+
+	<br><br>
+	<button onclick="backPage();">Back</button>
+
 	<script type="text/javascript" src="js/event-1.js"></script>
+	<script type="text/javascript">
+		function backPage(){
+			window.history.back();
+		}
+	</script>
 </body>
 </html>

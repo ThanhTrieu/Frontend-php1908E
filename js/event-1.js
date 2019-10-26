@@ -32,9 +32,9 @@ function myChangeData(obj){
 	console.log(text);
 }
 
-function myError(){
-	alert('server bi loi!');
-}
+// function myError(){
+// 	alert('server bi loi!');
+// }
 
 function myKeydown(){
 	console.log('nhan tay xuong ban phim');
@@ -47,6 +47,25 @@ function myKeypress(){
 function myKeyup(){
 	console.log('tay vua buong ban phim');
 }
+function myMouseOver(obj){
+	obj.width = 500;
+	obj.height = 500;
+	obj.src = "images/demo.jpg";
+}
+function myMouseOut(obj){
+	obj.width = 10;
+	obj.height = 10;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
