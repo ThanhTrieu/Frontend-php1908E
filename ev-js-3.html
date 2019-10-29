@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Giai phuong trinh bac nhat</title>
+	
+</head>
+<body>
+	<div class="container">
+		<h1>Giai phuong trinh bac nhat</h1>
+		<label for="hsa">He so A</label>
+		<input type="text" id="hsa">
+		<span id="errHsa"></span>
+		<br><br>
+		<label for="hsb">He so B</label>
+		<input type="text" id="hsb">
+		<span id="errHsb"></span>
+		<br><br>
+		<button type="button" id="btnPT">Giai PT</button>
+		<br>
+		<div id="result" style="display: none;">
+			<p>Nghiem la <span id="kq"></span></p>
+		</div>
+	</div>
+
+	<br><br>
+
+	<div class="login">
+		<h1>User login</h1>
+		<label for="username">Username : </label>
+		<input type="text" id="username">
+		<br><br>
+		<label for="password">Password : </label>
+		<input type="password" id="password">
+		<br><br>
+		<button class="brh fet fwwer" type="button" id="btnLogin">Login</button>
+	</div>
+
+	<br><br>
+	<h1> <span id="runTime2"> 0 </span> : <span id="runTime1"> 0 </span> : <span id="runTime"> 0 </span> </h1>
+	<button id="start" type="button" >start</button>
+	<button id="stop" type="button">stop</button>
+	<button id="reset" type="button">reset</button>
+	<input type="hidden" id="hddTime" value="0">
+
+	<script type="text/javascript">
+		let btnPT = document.getElementById('btnPT');
+		// bat su kien click
+		btnPT.addEventListener('click', function(){
+			// lay he so ma nguoi dung nhap vao
+			let inputHsa = document.getElementById('hsa');
+			let hsa = inputHsa.value;
+			
+			let inputHsb = document.getElementById('hsb');
+			let hsb = inputHsb.value;
+
+			let messErrHsa = document.getElementById('errHsa');
+			let messErrHsb = document.getElementById('errHsb');
+
+			let chkHsa = null;
+			let chkHsb = null;
+
+			//console.log(typeof(hsa, hsab));
+			// kiem tra hsa co phai la "chuoi so hay ko"
+			if(!isNaN(hsa)){
+				chkHsa = true;
+				inputHsa.style.border = '';
+				messErrHsa.innerHTML = '';
+				messErrHsa.style.color = '';
+			} else {
+				chkHsa = false;
+				// hien thi thong bao loi cho nguoi dung biet
+				// hien thi vien mau do cho the input
+				inputHsa.style.border = '2px solid red';
+				// thong bao noi dung loi
+				messErrHsa.innerHTML = 'Vui long nhap so';
+				messErrHsa.style.color = 'red';
+			}
+
+			if(!isNaN(hsb)){
+				chkHsb = true;
+				inputHsb.style.border = '';
+				messErrHsb.innerHTML = '';
+				messErrHsb.style.color = '';
+			} else {
+				chkHsb = false;
+				// hien thi thong bao loi cho nguoi dung biet
+				// hien thi vien mau do cho the input
+				inputHsb.style.border = '2px solid red';
+				// thong bao noi dung loi
+				messErrHsb.innerHTML = 'Vui long nhap so';
+				messErrHsb.style.color = 'red';
+			}
+
+			if(hsa.length > 0 && hsb.length > 0){
+				if(chkHsa && chkHsb){
+					// tim nghiem
+					hsa = Number.parseInt(hsa);
+					hsb = Number.parseInt(hsb);
+					let nghiem = (-hsb/hsa);
+					// hien thi ket qua
+					document.getElementById('result').style.display = '';
+					document.getElementById('kq').innerHTML = nghiem;
+				} else {
+					document.getElementById('result').style.display = 'none';
+					document.getElementById('kq').innerHTML = '';
+				}
+			} else {
+				alert('vui long nhap he so');
+				document.getElementById('result').style.display = 'none';
+				document.getElementById('kq').innerHTML = '';
+			}
+		});
+
+		let btnLogin = document.getElementById('btnLogin');
+		btnLogin.addEventListener('click', function(){
+			let txtUser = document.getElementById('username');
+			let user = txtUser.value;
+
+			let txtPass = document.getElementById('password');
+			let pass = txtPass.value;
+
+			if(user.length == 0 || pass.length == 0){
+				alert('Vui long nhap du lieu');
+			} else {
+				if(user === 'admin' && pass === '123'){
+					// dang nhap thanh cong
+					window.location.href = 'blog.html';
+				} else {
+					alert('user or pass invalid');
+				}
+			}
+		});
+
+		// bat su kien cho nut start
+		let btnStart = document.getElementById('start');
+		let showTime = document.getElementById('runTime');
+		let countTime;
+
+		btnStart.addEventListener('click', function(){
+			let runtime = document.getElementById('hddTime').value;
+			runtime = Number.parseInt(runtime);
+			let runHour = 0;
+
+			// khoa luon nut 
+			this.disabled = true;
+			countTime = setInterval(function(){
+				runtime += 1;
+				showTime.innerHTML = runtime;
+				document.getElementById('hddTime').value = runtime;
+				// xu ly cho phut
+				if(runtime == 60){
+					document.getElementById('hddTime').value = 0;
+					runtime = 0;
+					runHour += 1;
+					document.getElementById('runTime1').innerHTML = runHour;
+				}
+			},1000);
+		});
+
+		let btnStop = document.getElementById('stop');
+		btnStop.addEventListener('click', function(){
+			// mo nut start
+			btnStart.disabled = false;
+			clearInterval(countTime);
+		});
+
+		let btnReset = document.getElementById('reset');
+		btnReset.onclick = function(){
+			clearInterval(countTime);
+			document.getElementById('hddTime').value = 0;
+
+			let runtime = document.getElementById('hddTime').value;
+			runtime = Number.parseInt(runtime);
+			countTime = setInterval(function(){
+				runtime += 1;
+				showTime.innerHTML = runtime;
+				
+
+			},1000);
+		}
+	</script>
+</body>
+</html>
