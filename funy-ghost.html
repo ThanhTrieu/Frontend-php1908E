@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Funny Ghost</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container" id="content">
+		<!-- vung noi dung de tim su khac biet -->
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<h1 class="text-center">Tim su khac biet giua hai buc tranh</h1>
+				<p class="text-center" id="countTime">0</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+				<img src="images/download.jpeg" alt="image-1" class="img-fluid w-100">
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+				<img src="images/download.jpeg
+				" alt="image-1" class="img-fluid w-100">
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" id="content-ghost" style="display: none;">
+		<!-- vung noi dung hien thi hinh anh ma quy -->
+		<img src="images/ghost.jpg" alt="ghost" class="img-fluid w-100">
+		<br><br>
+		<audio id="audio-ghost" autobuffer autoloop loop>
+			<source src="audio/test.mp3" type="audio/mp3">
+		</audio>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// lay ngau nhien 1 so nao do
+			let timeRandom = Math.ceil(Math.random() * 10);
+			let time = 0;
+			let countTime;
+			countTime = setInterval(function(){
+				time++;
+				$('#countTime').text(time);
+				if(time == timeRandom){
+					clearInterval(countTime);
+					// den 6s
+					// hien thi hinh anh ma quy ra
+					// phat file audio
+					// an di vung tim su khac biet
+					$('#content').hide('fast');
+					$('#content-ghost').show('fast');
+					$('audio')[0].play();
+				}
+			},1000);
+
+			window.onbeforeunload = function(){
+				return 'exits';
+			}
+		});
+	</script>
+</body>
+</html>
